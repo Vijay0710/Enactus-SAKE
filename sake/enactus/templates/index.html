@@ -1,0 +1,285 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
+  <script type="module" src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+  <script type="module" src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js"></script>
+  <script type="module" src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js"></script>
+  <script type="module" src="https://www.gstatic.com/firebasejs/9.6.1/firebase-storage.js"></script>
+  <link rel="stylesheet" href="{% static 'enactus/css/custom.css' %}">
+
+</head>
+
+<body>
+
+  <div class="row d-flex col-12 justify-content-center">
+    <div class="d-flex justify-content-center align-items-center col-2" id="menuToggleBtnContainer">
+      <i class="bi bi-list" role="button" id="btn-view-menu"></i>
+    </div>
+    <div class="d-flex justify-content-center col-8 image-holder" style="height: 100px;">
+         <img src=" {% static 'enactus/media/sake_logo_poster_BLACK.png' %} " alt="Sake logo" class="img-fluid image img-logo border-2">
+    </div>
+
+    <div class="d-flex justify-content-center align-items-center col-2">
+      <div class="d-flex justify-content-center align-items-center user-access-utilities-holder card">
+        <a class="btn btn" style="text-decoration: none;" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button"
+          aria-controls="offcanvasExample">
+          <i class="bi bi-cart-fill user-access-utilities" role="button"></i>
+        </a>
+      </div>
+      <div class="d-flex justify-content-center align-items-center user-access-utilities-holder card">
+        <a href="{% url 'login' %}"> <i class="bi bi-person-fill user-access-utilities" role="button"
+            id="utility-account"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <nav class="navbar nav-expand d-flex flex-column align-item-start" id="sidenav">
+    <ul class="navbar-nav d-flex flex-column mt-5 card" id="sidenav-card">
+      <h5 class="card-title justify-content-center d-flex font-weight-bold fs-4">Categories</h5>
+      <li class="nav-item">
+        <a href="#container-masks" class="nav-link">
+          Mask
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="#container-sanitiser" class="nav-link">
+          Sanitiser
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link">
+          Dispenser
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link">
+          Gloves
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link">
+          Others
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="admin_01.html" class="nav-link">
+          More about us
+        </a>
+      </li>
+      <hr>
+      <img src=" {% static 'enactus/media/qrcode_enactus.png' %} " alt="Enactus insta QR code" class="image" id="image-enactus-qr">
+    </ul>
+  </nav>
+
+  <div class="container" id="container-main-content">
+    <div class="row container-special-sales">
+      <div class="container-fluid col-md-6 col-xs-12">
+        <div class="input-group row">
+          <input type="text" class="form-control col-10" placeholder="Search">
+        </div>
+        <div class="d-flex justify-content-center image-holder image-holder-special" style="height: 160px;">
+          <img src=" {% static 'enactus/media/special_sales_01.png' %} " alt="" class="img-fluid image image-poster">
+        </div>
+
+      </div>
+
+      <div class="container-fluid col-md-6 col-xs-12">
+        <div class="d-flex justify-content-center image-holder image-holder-special " style="height: 100px;">
+          <img src=" {% static 'enactus/media/special_sales_02.png' %} " alt="" class="img-fluid image image-poster">
+        </div>
+        <div class="d-flex justify-content-center image-holder image-holder-special " style="height: 100px;">
+          <img src=" {% static 'enactus/media/special_sales_03.png' %} " alt="" class="img-fluid image image-poster">
+        </div>
+      </div>
+    </div>
+
+    <div class="card container-section-holder">
+      <div class="card-body card-parent container-masks justify-content-center" id="container-masks">
+        <h5 class="card-title">Masks</h5>
+
+        <a href="product_details.html">
+          <div class="d-flex d-inline-flex card card-child container-product">
+            <div class="card-body">
+              <div class="justify-content-center image-holder image-holder-product">
+                <img src=" {% static 'enactus/media/def_product.png' %} " alt="Default_product_image" class="img-fluid img-product image">
+              </div>
+              <p class="text-product-name">B45 super clean</p>
+            </div>
+          </div>
+        </a>
+
+        <div class="d-flex d-inline-flex card card-child container-product">
+          <div class="card-body">
+            <div class="justify-content-center image-holder image-holder-product">
+              <img src="{% static 'enactus/media/def_product.png' %}" alt="Default_product_image" class="img-fluid img-product image">
+            </div>
+            <p class="text-product-name">B45 super clean</p>
+          </div>
+        </div>
+
+        <div class="d-flex d-inline-flex card card-child container-product">
+          <div class="card-body">
+            <div class="justify-content-center image-holder image-holder-product">
+              <img src="{% static 'enactus/media/def_product.png' %}" alt="Default_product_image" class="img-fluid img-product image">
+            </div>
+            <p class="text-product-name">B45 super clean</p>
+          </div>
+        </div>
+
+        <div class="d-flex d-inline-flex card card-child container-product">
+          <div class="card-body">
+            <div class="justify-content-center image-holder image-holder-product">
+              <img src="{% static 'enactus/media/def_product.png' %}" alt="Default_product_image" class="img-fluid img-product image">
+            </div>
+            <p class="text-product-name">B45 super clean</p>
+          </div>
+        </div>
+
+        <div class="d-flex d-inline-flex card card-child container-product">
+          <div class="card-body">
+            <div class="justify-content-center image-holder image-holder-product">
+              <img src="{% static 'enactus/media/def_product.png' %}" alt="Default_product_image" class="img-fluid img-product image">
+            </div>
+            <p class="text-product-name">B45 super clean</p>
+          </div>
+        </div>
+
+        <div class="d-flex d-inline-flex card card-child container-product">
+          <div class="card-body">
+            <div class="justify-content-center image-holder image-holder-product">
+              <img src="{% static 'enactus/media/def_product.png' %}" alt="Default_product_image" class="img-fluid img-product image">
+            </div>
+            <p class="text-product-name">B45 super clean</p>
+          </div>
+        </div>
+
+        <div class="d-flex d-inline-flex card card-child container-product">
+          <div class="card-body">
+            <div class="justify-content-center image-holder image-holder-product">
+              <img src="{% static 'enactus/media/def_product.png' %}" alt="Default_product_image" class="img-fluid img-product image">
+            </div>
+            <p class="text-product-name">B45 super clean</p>
+          </div>
+        </div>
+
+        <div class="d-flex d-inline-flex card card-child container-product">
+          <div class="card-body">
+            <div class="justify-content-center image-holder image-holder-product">
+              <img src="{% static 'enactus/media/def_product.png' %}" alt="Default_product_image" class="img-fluid img-product image">
+            </div>
+            <p class="text-product-name">B45 super clean</p>
+          </div>
+        </div>
+
+
+      </div>
+      <div class="card-body card-parent container-sanitiser" id="container-sanitiser">
+        <h5 class="card-title">Sanitisers</h5>
+
+        <div class="d-flex d-inline-flex card card-child container-product">
+          <div class="card-body">
+            <div class="justify-content-center image-holder image-holder-product">
+              <img src="{% static 'enactus/media/def_product.png' %}" alt="Default_product_image" class="img-fluid img-product image">
+            </div>
+            <p class="text-product-name">B45 super clean</p>
+          </div>
+        </div>
+
+        <div class="d-flex d-inline-flex card card-child container-product">
+          <div class="card-body">
+            <div class="justify-content-center image-holder image-holder-product">
+              <img src="{% static 'enactus/media/def_product.png' %}" alt="Default_product_image" class="img-fluid img-product image">
+            </div>
+            <p class="text-product-name">B45 super clean</p>
+          </div>
+        </div>
+
+        <div class="d-flex d-inline-flex card card-child container-product">
+          <div class="card-body">
+            <div class="justify-content-center image-holder image-holder-product">
+              <img src="{% static 'enactus/media/def_product.png' %}" alt="Default_product_image" class="img-fluid img-product image">
+            </div>
+            <p class="text-product-name">B45 super clean</p>
+          </div>
+        </div>
+
+        <div class="d-flex d-inline-flex card card-child container-product">
+          <div class="card-body">
+            <div class="justify-content-center image-holder image-holder-product">
+              <img src="{% static 'enactus/media/def_product.png' %}" alt="Default_product_image" class="img-fluid img-product image">
+            </div>
+            <p class="text-product-name">B45 super clean</p>
+          </div>
+        </div>
+
+        <div class="d-flex d-inline-flex card card-child container-product">
+          <div class="card-body">
+            <div class="justify-content-center image-holder image-holder-product">
+              <img src="{% static 'enactus/media/def_product.png' %}" alt="Default_product_image" class="img-fluid img-product image">
+            </div>
+            <p class="text-product-name">B45 super clean</p>
+          </div>
+        </div>
+
+        <div class="d-flex d-inline-flex card card-child container-product">
+          <div class="card-body">
+            <div class="justify-content-center image-holder image-holder-product">
+              <img src="{% static 'enactus/media/def_product.png' %}" alt="Default_product_image" class="img-fluid img-product image">
+            </div>
+            <p class="text-product-name">B45 super clean</p>
+          </div>
+        </div>
+
+        <div class="d-flex d-inline-flex card card-child container-product">
+          <div class="card-body">
+            <div class="justify-content-center image-holder image-holder-product">
+              <img src="{% static 'enactus/media/def_product.png' %}" alt="Default_product_image" class="img-fluid img-product image">
+            </div>
+            <p class="text-product-name">B45 super clean</p>
+          </div>
+        </div>
+
+        <div class="d-flex d-inline-flex card card-child container-product">
+          <div class="card-body">
+            <div class="justify-content-center image-holder image-holder-product">
+              <img src="{% static 'enactus/media/def_product.png' %}" alt="Default_product_image" class="img-fluid img-product image">
+            </div>
+            <p class="text-product-name">B45 super clean</p>
+          </div>
+        </div>
+
+
+      </div>
+
+
+    </div>
+
+    <!--  -->
+  </div>
+  <footer>
+    <div class="d-flex footer">
+      <ul class="list-inline mx-auto justify-content-center d-flex flex-column footer-list">
+        <li class="text-center footer-header">Contact us</li>
+        <li class="text-center footer-item">enactus@rajalakshmi.edu.in</li>
+        <li class="text-center footer-item">+91 9871254366</li>
+        <li class="text-center footer-item">No 68 Rajaraman Nagar Chennai 600075</li>
+        <li class="text-center footer-item">@sake.official_</li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="{% static 'enactus/js/index.js' %}"></script>
+  <script src="{% static 'enactus/js/firebase.js' %}"></script>
+</body>
+
+</html>
