@@ -1,0 +1,184 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'enactus/css/custom.css' %}">
+</head>
+
+<body>
+
+    <div class="row d-flex col-12 justify-content-center">
+        <div class="d-flex justify-content-center align-items-center col-2" id="menuToggleBtnContainer">
+            <i class="bi bi-list" role="button" id="btn-view-menu"></i>
+        </div>
+        <div class="d-flex justify-content-center col-8 image-holder" style="height: 100px;">
+            <img src=" {% static 'enactus/media/sake_logo_poster_BLACK.png' %} " alt="Sake logo" class="img-fluid image img-logo border-2">
+        </div>
+
+        <div class="d-flex justify-content-center align-items-center col-2">
+            <div class="d-flex justify-content-center align-items-center user-access-utilities-holder card">
+                <a class="btn btn" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button"
+                    aria-controls="offcanvasExample">
+                    <i class="bi bi-cart-fill user-access-utilities" role="button"></i>
+                </a>
+            </div>
+            <div class="d-flex justify-content-center align-items-center user-access-utilities-holder card">
+                <a href="{% url 'login' %}"> <i class="bi bi-person-fill user-access-utilities" role="button"
+                        id="utility-account"></i></a>
+            </div>
+        </div>
+    </div>
+    <nav class="navbar nav-expand d-flex flex-column align-item-start" id="sidenav">
+        <ul class="navbar-nav d-flex flex-column mt-5 card" id="sidenav-card">
+            <h5 class="card-title justify-content-center d-flex font-weight-bold fs-4">Categories</h5>
+            <li class="nav-item">
+                <a href="#container-masks" class="nav-link">
+                    Mask
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#container-sanitiser" class="nav-link">
+                    Sanitiser
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                    Dispenser
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                    Gloves
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                    Others
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                    More about us
+                </a>
+            </li>
+            <hr>
+            <img src=" {% static 'enactus/media/qrcode_enactus.png' %} "  alt="Enactus insta QR code" class="image" id="image-enactus-qr">
+        </ul>
+    </nav>
+
+    <div class="container container-main-content-product-details">
+        <div class="row">
+
+            <div class="col-12 col-md-6 col-lg-4 d-flex justify-content-center m-0 pt-5">
+                <img src=" {% static 'enactus/media/mask_man.jpg' %} " height="452.6px" alt="">
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4 pt-5 px-5">
+                <div class="h4">3 Ply mask (Standard)</div>
+                <div style="color: #797979;">MA157A</div>
+                <div class="mt-2 fw-bold fs-5" style="color: #0A1FDB;">₹ 2.4</div>
+                <div class="mt-2">Color
+                    <div class="col-lg-3 col-xl-3 col-xxl-3 col-3">
+                        <div class="row">
+                            <div class="col-lg-1 col-1 col-xl-1 col-xxl-1">
+                                <img src=" {% static 'enactus/media/black_color.svg' %} "  alt="">
+                            </div>
+                            <div class="col-lg-3 col-1 col-xl-1 col-xxl-1">
+                                <img src=" {% static 'enactus/media/grey_color.svg' %} "  alt="">
+                            </div>
+                            <div class="col-lg-2 col-1 col-xl-1 col-xxl-1">
+                                <img src=" {% static 'enactus/media/blue_color.svg' %} "  alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-2">Quantity</div>
+                <div class="mt-2" style="width: 150px;">
+                    <select class="form-select" data-width="100px" aria-label="Default select example">
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+                </div>
+                <div class="mt-2">
+                    <div class="h5">Review</div>
+                    <div class="m-0 p-0"> The light, pleated cotton is breathable and passes the light test. They have a
+                        moldable
+                        nose wire and a pocket for an adjustable
+                        filter.</div>
+                </div>
+                <div class="mt-1 d-none d-md-inline">
+                    <span class="h5">Preview</span>
+                    <div class="row my-2">
+                        <img src=" {% static 'enactus/media/mask_man.jpg' %} "  alt="Mask man" class="img-fluid image img-logo " style="width: 50px;">
+                        <img src=" {% static 'enactus/media/mask_man.jpg' %} "  alt="Mask man" class="img-fluid image img-logo " style="width: 50px;"> 
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-12 col-lg-4 p-5 ">
+                <div class="row">
+                    <div class="d-none d-xxl-inline"
+                        style="border-left:1px solid #80878F;height:450px; width: 0px;"></div>
+                    <div class="col-lg-12 col-xl-12 col-xxl-11">
+                        <div class="h5">Product Description</div>
+                        <div class="row ">
+                            <div class="col-lg-12 col-xl-12 col-xxl-12">Wearing a mask over your nose and mouth is
+                                required on
+                                planes, buses, trains, and other forms of
+                                public transportation traveling into, within, or out of the United States and while
+                                indoors at U.S.
+                                transportation
+                                hubs such as airports and train stations. Travelers are not required to wear a mask in
+                                outdoor areas
+                                of a conveyance
+                                (like on open deck areas of a ferry or the uncovered top deck of a bus).For people who
+                                cannot wear
+                                or safely wear a mask because of a disability as defined by the Americans with
+                                Disabilities
+                                Act consider reasonable accommodation for workers who are not fully vaccinated or who
+                                have
+                                difficulty wearing certain types of masks because of a disability.</div>
+                            <div class="d-grid col-lg-12 col-md-6 col-12 mx-auto">
+                                <a type="button"
+                                    class="btn btn-light btn-lg border border-primary border border-3 text-primary fw-1 mt-3"
+                                    style="border-radius: 0.7rem;">
+                                    <i class="bi bi-plus px-2"></i> ADD TO CART
+                            </a>
+                                <a type="button" href="thankyou.html"
+                                    class="btn btn-primary btn-lg border border-primary border border-3  fw-1 mt-3"
+                                    style="border-radius: 0.7rem;">
+                                    <i class="bi bi-cart px-2"></i>BUY NOW
+                            </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    </div>
+    <footer>
+        <div class="d-flex footer">
+            <ul class="list-inline mx-auto justify-content-center d-flex flex-column footer-list">
+                <li class="text-center footer-header">Contact us</li>
+                <li class="text-center footer-item">enactus@rajalakshmi.edu.in</li>
+                <li class="text-center footer-item">+91 9871254366</li>
+                <li class="text-center footer-item">No 68 Rajaraman Nagar Chennai 600075</li>
+                <li class="text-center footer-item">@sake.official_</li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="{% static 'enactus/js/index.js' %}"></script>
+</body>
+
+</html>
