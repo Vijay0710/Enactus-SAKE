@@ -5,5 +5,26 @@ from django.http import HttpResponse
 def login(request):
     return render(request,'login.html')
 
+def admin_01(request):
+    context = {
+        "data" : [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+    }
+    # return response
+    return render(request, "admin_01.html", context)
+    
+def admin_02(request):
+    context = {
+        "data" : [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+    }
+    # return response
+    return render(request, "admin_02.html", context)
+
+def profile_01(request):
+    context = {
+        "data" : [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+    }
+    # return response
+    return render(request, "profile_01.html", context)
+
 def say_hello(request):
     return render(request,'index.html',context={'name':'vijay'})

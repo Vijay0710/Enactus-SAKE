@@ -1,5 +1,4 @@
 import * as bootstrap from 'bootstrap';
-
 var md = 768;
 
 var isMenuVisible = false
@@ -49,6 +48,9 @@ function closeSideNav(){
 function test(){
     alert("Working!");
 }
+
+
+
 /* TO DO 
 
 
