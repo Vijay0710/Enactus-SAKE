@@ -2,6 +2,13 @@ from django.shortcuts import render
 from django.http import HttpResponse
 # Create your views here.
 
+
+def thankyou(request):
+    return render(request,'thankyou.html')
+
+def profile_02(request):
+    return render(request,'profile_02.html')
+
 def login(request):
     return render(request,'login.html')
 

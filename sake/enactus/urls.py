@@ -10,7 +10,9 @@ urlpatterns = [
     path('admin_02/',views.admin_02,name='admin2'),
     path('profile_01/',views.profile_01,name='profile_01'),
     path('register/',views.register,name='register'),
-    path('product_details',views.product_details,name='product_details')
+    path('product_details/',views.product_details,name='product_details'),
+    path('thankyou/',views.thankyou,name='thankyou'),
+    path('profile_02/',views.profile_02,name='profile_02'),
 ]
 
 urlpatterns += staticfiles_urlpatterns()

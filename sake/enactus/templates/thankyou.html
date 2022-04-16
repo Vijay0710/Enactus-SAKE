@@ -1,0 +1,83 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="{% static 'enactus/css/custom.css' %}">
+</head>
+
+<body>
+
+
+  <!-- The title part -->
+  <div class="row d-flex col-12 justify-content-center">
+    <div class="d-flex justify-content-center align-items-center col-2" id="menuToggleBtnContainer">
+      <i class="bi bi-list" role="button" id="btn-view-menu"></i>
+    </div>
+    <div class="d-flex justify-content-center col-8 image-holder" style="height: 100px;">
+      <img src="{%static 'enactus/media/sake_logo_poster_BLACK.png'%}" alt="Sake logo" class="img-fluid image img-logo border-2">
+    </div>
+
+    <div class="d-flex justify-content-center align-items-center col-2">
+      <div class="d-flex justify-content-center align-items-center user-access-utilities-holder card" >
+        <i class="bi bi-cart-fill user-access-utilities" role="button"></i>
+      </div>
+      <div class="d-flex justify-content-center align-items-center user-access-utilities-holder card" >
+        <i class="bi bi-person-fill user-access-utilities" role="button" id="utility-account"></i>
+      </div>
+    </div>
+
+  </div>
+
+
+  <!-- The content part -->
+
+
+    <!--  -->
+    <!-- Sections part -->
+
+    <div class="d-flex flex-column justify-content-center align-items-center mb-5 text-center" >
+
+        <div class="d-flex justify-content-center image-holder image-holder-special  " style="height: 300px;">
+            <img src="{%static 'enactus/media/tick_icon.gif'%}" alt="" class="img-fluid image">
+          </div>
+        <div class="thankyou-text">
+            <div class="thankyou-title">
+                <p> Order Placed Successfully!</p>
+             </div>
+             <div class="thankyou-captions">
+                 <p>Grab tightly<br> We will reach you shortly!</p>
+             </div>
+        </div>
+        <div class="pb-2 text-center btn-track-order-container mt-3">
+            <button type="submit" class="text-center btn button font-weight-bold mt-2 form-rounded btn-track-order">
+                <i class="bi bi-truck" style="padding: 0px 15px;"></i>Track Order
+            </button>
+          </div>
+
+
+    </div>
+
+    <!--  -->
+  </div>
+  <footer>
+    <div class="d-flex footer">
+      <ul class="list-inline mx-auto justify-content-center d-flex flex-column footer-list">
+        <li class="text-center footer-header">Contact us</li>
+        <li class="text-center footer-item">enactus@rajalakshmi.edu.in</li>
+        <li class="text-center footer-item">+91 9871254366</li>
+        <li class="text-center footer-item">No 68 Rajaraman Nagar Chennai 600075</li>
+        <li class="text-center footer-item">@sake.official_</li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="{%static 'enactus/js/index.js'%}"></script>
+</body>
+
+</html>

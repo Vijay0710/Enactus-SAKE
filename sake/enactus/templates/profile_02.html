@@ -1,0 +1,391 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'enactus/css/custom.css' %}">
+</head>
+
+<body style="padding: 0%;">
+
+    <!-- The title part -->
+    <div class="row d-flex col-12 justify-content-center">
+        <div class="d-flex justify-content-center align-items-center col-2" id="menuToggleBtnContainer">
+            <i class="bi bi-list" role="button" id="btn-view-menu"></i>
+        </div>
+        <div class="d-flex justify-content-center col-8 image-holder" style="height: 100px;">
+            <img src="{%static 'enactus/media/sake_logo_poster_BLACK.png'%}" alt="Sake logo" class="img-fluid image img-logo border-2">
+        </div>
+
+        <div class="d-flex justify-content-center align-items-center col-2">
+            <div class="d-flex justify-content-center align-items-center user-access-utilities-holder card">
+                <i class="bi bi-cart-fill user-access-utilities" role="button"></i>
+            </div>
+            <div class="d-flex justify-content-center align-items-center user-access-utilities-holder card">
+                <i class="bi bi-person-fill user-access-utilities" role="button" id="utility-account"></i>
+            </div>
+        </div>
+    </div>
+    <!-- The nav-bar part -->
+
+    <nav class="navbar nav-expand d-flex flex-column align-item-start" id="sidenav">
+        <ul class="navbar-nav d-flex flex-column mt-5 card" id="sidenav-card">
+            <h5 class="card-title justify-content-center d-flex font-weight-bold fs-4">Categories</h5>
+            <li class="nav-item">
+                <a href="#container-masks" class="nav-link">
+                    Mask
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#container-sanitiser" class="nav-link">
+                    Sanitiser
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                    Dispenser
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                    Gloves
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                    Others
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                    More about us
+                </a>
+            </li>
+            <hr>
+            <img src="{%static 'enactus/media/qrcode_enactus.png'%}" alt="Enactus insta QR code" class="image" id="image-enactus-qr">
+        </ul>
+    </nav>
+
+
+    <div class="row container-fluid justify-content-center container-main-content-profile">
+
+        <div class="d-inline-flex card card-child container-profile-product">
+            <div class="card-body profile-product text-center row">
+                    <div class="d-flex flex-column justify-content-center align-items-center col-lg-4 col-md-6 col-xs-12">
+                        <div class="profile-product-image-holder d-flex justify-content-center align-items-center">
+                            <img src="{%static 'enactus/media/3PlyBlackMask.png'%}" alt="Product Image" class="img-fluid">
+                        </div>
+                    </div>
+                    <div class="container-fluid d-flex justify-content-center col-6 flex-column col-lg-4 col-md-6 col-xs-12">
+                        <div class="row">
+                            <p class="profile-product-title">3 Ply Black Mask</p>
+                        </div>
+                        <div class="row">
+                            <div class="flex-column col-6">
+                                <p>
+                                    <span
+                                        class="profile-product-details-title profile-product-quantity-title ">Quantity</span><br>
+                                    <span class="profile-product-details-value profile-product-status-value">x50</span>
+                                </p>
+                                <p>
+                                    <span class="profile-product-details-title profile-product-cost-title">Cost</span><br>
+                                    <span class="profile-product-details-value profile-product-cost-value">₹1250</span>
+                                </p>
+                            </div>
+                            <div class="flex-column col-6 justify-content-start">
+                                <p>
+                                    <span
+                                        class="profile-product-details-title profile-product-status-title">Status</span><br>
+                                    <span
+                                        class="profile-product-details-value profile-product-status-value">In-transient</span>
+                                </p>
+                                <p>
+                                    <span class="profile-product-details-title profile-product-ddate-title">Expected
+                                        Delivery Date</span><br>
+                                    <span class="profile-product-details-value profile-product-ddate-value">15 Nov
+                                        2021</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="d-flex col-12 flex-column justify-content-center align-items-center col-lg-4 col-md-12 col-xs-12">
+                        <div class="btn btn-primary button-profile-product-details">
+                            Track Order
+                        </div>
+                    </div>
+
+            </div>
+        </div>
+
+        <div class="d-inline-flex card card-child container-profile-product">
+            <div class="card-body profile-product text-center row">
+                    <div class="d-flex flex-column justify-content-center align-items-center col-lg-4 col-md-6 col-xs-12">
+                        <div class="profile-product-image-holder d-flex justify-content-center align-items-center">
+                            <img src="{%static 'enactus/media/3PlyBlackMask.png'%}" alt="Product Image" class="img-fluid">
+                        </div>
+                    </div>
+                    <div class="container-fluid d-flex justify-content-center col-6 flex-column col-lg-4 col-md-6 col-xs-12">
+                        <div class="row">
+                            <p class="profile-product-title">3 Ply Black Mask</p>
+                        </div>
+                        <div class="row">
+                            <div class="flex-column col-6">
+                                <p>
+                                    <span
+                                        class="profile-product-details-title profile-product-quantity-title ">Quantity</span><br>
+                                    <span class="profile-product-details-value profile-product-status-value">x50</span>
+                                </p>
+                                <p>
+                                    <span class="profile-product-details-title profile-product-cost-title">Cost</span><br>
+                                    <span class="profile-product-details-value profile-product-cost-value">₹1250</span>
+                                </p>
+                            </div>
+                            <div class="flex-column col-6 justify-content-start">
+                                <p>
+                                    <span
+                                        class="profile-product-details-title profile-product-status-title">Status</span><br>
+                                    <span
+                                        class="profile-product-details-value profile-product-status-value">In-transient</span>
+                                </p>
+                                <p>
+                                    <span class="profile-product-details-title profile-product-ddate-title">Expected
+                                        Delivery Date</span><br>
+                                    <span class="profile-product-details-value profile-product-ddate-value">15 Nov
+                                        2021</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="d-flex col-12 flex-column justify-content-center align-items-center col-lg-4 col-md-12 col-xs-12">
+                        <div class="btn btn-primary button-profile-product-details">
+                            Track Order
+                        </div>
+                    </div>
+
+            </div>
+        </div>
+
+        <div class="d-inline-flex card card-child container-profile-product">
+            <div class="card-body profile-product text-center row">
+                    <div class="d-flex flex-column justify-content-center align-items-center col-lg-4 col-md-6 col-xs-12">
+                        <div class="profile-product-image-holder d-flex justify-content-center align-items-center">
+                            <img src="{%static 'enactus/media/3PlyBlackMask.png'%}" alt="Product Image" class="img-fluid">
+                        </div>
+                    </div>
+                    <div class="container-fluid d-flex justify-content-center col-6 flex-column col-lg-4 col-md-6 col-xs-12">
+                        <div class="row">
+                            <p class="profile-product-title">3 Ply Black Mask</p>
+                        </div>
+                        <div class="row">
+                            <div class="flex-column col-6">
+                                <p>
+                                    <span
+                                        class="profile-product-details-title profile-product-quantity-title ">Quantity</span><br>
+                                    <span class="profile-product-details-value profile-product-status-value">x50</span>
+                                </p>
+                                <p>
+                                    <span class="profile-product-details-title profile-product-cost-title">Cost</span><br>
+                                    <span class="profile-product-details-value profile-product-cost-value">₹1250</span>
+                                </p>
+                            </div>
+                            <div class="flex-column col-6 justify-content-start">
+                                <p>
+                                    <span
+                                        class="profile-product-details-title profile-product-status-title">Status</span><br>
+                                    <span
+                                        class="profile-product-details-value profile-product-status-value">In-transient</span>
+                                </p>
+                                <p>
+                                    <span class="profile-product-details-title profile-product-ddate-title">Expected
+                                        Delivery Date</span><br>
+                                    <span class="profile-product-details-value profile-product-ddate-value">15 Nov
+                                        2021</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="d-flex col-12 flex-column justify-content-center align-items-center col-lg-4 col-md-12 col-xs-12">
+                        <div class="btn btn-primary button-profile-product-details">
+                            Track Order
+                        </div>
+                    </div>
+
+            </div>
+        </div>
+
+        <div class="d-inline-flex card card-child container-profile-product">
+            <div class="card-body profile-product text-center row">
+                    <div class="d-flex flex-column justify-content-center align-items-center col-lg-4 col-md-6 col-xs-12">
+                        <div class="profile-product-image-holder d-flex justify-content-center align-items-center">
+                            <img src="{%static 'enactus/media/3PlyBlackMask.png'%}" alt="Product Image" class="img-fluid">
+                        </div>
+                    </div>
+                    <div class="container-fluid d-flex justify-content-center col-6 flex-column col-lg-4 col-md-6 col-xs-12">
+                        <div class="row">
+                            <p class="profile-product-title">3 Ply Black Mask</p>
+                        </div>
+                        <div class="row">
+                            <div class="flex-column col-6">
+                                <p>
+                                    <span
+                                        class="profile-product-details-title profile-product-quantity-title ">Quantity</span><br>
+                                    <span class="profile-product-details-value profile-product-status-value">x50</span>
+                                </p>
+                                <p>
+                                    <span class="profile-product-details-title profile-product-cost-title">Cost</span><br>
+                                    <span class="profile-product-details-value profile-product-cost-value">₹1250</span>
+                                </p>
+                            </div>
+                            <div class="flex-column col-6 justify-content-start">
+                                <p>
+                                    <span
+                                        class="profile-product-details-title profile-product-status-title">Status</span><br>
+                                    <span
+                                        class="profile-product-details-value profile-product-status-value">In-transient</span>
+                                </p>
+                                <p>
+                                    <span class="profile-product-details-title profile-product-ddate-title">Expected
+                                        Delivery Date</span><br>
+                                    <span class="profile-product-details-value profile-product-ddate-value">15 Nov
+                                        2021</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="d-flex col-12 flex-column justify-content-center align-items-center col-lg-4 col-md-12 col-xs-12">
+                        <div class="btn btn-primary button-profile-product-details">
+                            Track Order
+                        </div>
+                    </div>
+
+            </div>
+        </div>
+
+        <div class="d-inline-flex card card-child container-profile-product">
+            <div class="card-body profile-product text-center row">
+                    <div class="d-flex flex-column justify-content-center align-items-center col-lg-4 col-md-6 col-xs-12">
+                        <div class="profile-product-image-holder d-flex justify-content-center align-items-center">
+                            <img src="{%static 'enactus/media/3PlyBlackMask.png'%}" alt="Product Image" class="img-fluid">
+                        </div>
+                    </div>
+                    <div class="container-fluid d-flex justify-content-center col-6 flex-column col-lg-4 col-md-6 col-xs-12">
+                        <div class="row">
+                            <p class="profile-product-title">3 Ply Black Mask</p>
+                        </div>
+                        <div class="row">
+                            <div class="flex-column col-6">
+                                <p>
+                                    <span
+                                        class="profile-product-details-title profile-product-quantity-title ">Quantity</span><br>
+                                    <span class="profile-product-details-value profile-product-status-value">x50</span>
+                                </p>
+                                <p>
+                                    <span class="profile-product-details-title profile-product-cost-title">Cost</span><br>
+                                    <span class="profile-product-details-value profile-product-cost-value">₹1250</span>
+                                </p>
+                            </div>
+                            <div class="flex-column col-6 justify-content-start">
+                                <p>
+                                    <span
+                                        class="profile-product-details-title profile-product-status-title">Status</span><br>
+                                    <span
+                                        class="profile-product-details-value profile-product-status-value">In-transient</span>
+                                </p>
+                                <p>
+                                    <span class="profile-product-details-title profile-product-ddate-title">Expected
+                                        Delivery Date</span><br>
+                                    <span class="profile-product-details-value profile-product-ddate-value">15 Nov
+                                        2021</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="d-flex col-12 flex-column justify-content-center align-items-center col-lg-4 col-md-12 col-xs-12">
+                        <div class="btn btn-primary button-profile-product-details">
+                            Track Order
+                        </div>
+                    </div>
+
+            </div>
+        </div>
+
+        <div class="d-inline-flex card card-child container-profile-product">
+            <div class="card-body profile-product text-center row">
+                    <div class="d-flex flex-column justify-content-center align-items-center col-lg-4 col-md-6 col-xs-12">
+                        <div class="profile-product-image-holder d-flex justify-content-center align-items-center">
+                            <img src="{%static 'enactus/media/3PlyBlackMask.png'%}" alt="Product Image" class="img-fluid">
+                        </div>
+                    </div>
+                    <div class="container-fluid d-flex justify-content-center col-6 flex-column col-lg-4 col-md-6 col-xs-12">
+                        <div class="row">
+                            <p class="profile-product-title">3 Ply Black Mask</p>
+                        </div>
+                        <div class="row">
+                            <div class="flex-column col-6">
+                                <p>
+                                    <span
+                                        class="profile-product-details-title profile-product-quantity-title ">Quantity</span><br>
+                                    <span class="profile-product-details-value profile-product-status-value">x50</span>
+                                </p>
+                                <p>
+                                    <span class="profile-product-details-title profile-product-cost-title">Cost</span><br>
+                                    <span class="profile-product-details-value profile-product-cost-value">₹1250</span>
+                                </p>
+                            </div>
+                            <div class="flex-column col-6 justify-content-start">
+                                <p>
+                                    <span
+                                        class="profile-product-details-title profile-product-status-title">Status</span><br>
+                                    <span
+                                        class="profile-product-details-value profile-product-status-value">In-transient</span>
+                                </p>
+                                <p>
+                                    <span class="profile-product-details-title profile-product-ddate-title">Expected
+                                        Delivery Date</span><br>
+                                    <span class="profile-product-details-value profile-product-ddate-value">15 Nov
+                                        2021</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="d-flex col-12 flex-column justify-content-center align-items-center col-lg-4 col-md-12 col-xs-12">
+                        <div class="btn btn-primary button-profile-product-details">
+                            Track Order
+                        </div>
+                    </div>
+
+            </div>
+        </div>
+
+
+    </div>
+    <script src="{%static 'enactus/js/index.js'%}"></script>
+    <footer class="bg-light text-center position-relative">
+        <hr>
+        <div class="container">
+            <p class="lead text-primary">
+                Contact Us
+            </p>
+            <p>
+                sake@gmail.com <br>
+                9876543210 <br>
+                No 68, Rajaram Nagar, Chennai - 600097 <br>
+                <a href="https://instagram.com/sake.official_?utm_medium=copy_link"><i
+                        class="bi bi-instagram text-danger mx-1"></i></a>
+            </p>
+        </div>
+    </footer>
+</body>
+
+</html>
