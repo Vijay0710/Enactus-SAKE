@@ -92,7 +92,9 @@ def register(request):
                 print(exc)
                 json_obj = json.loads(exc)
                 val = json_obj['error']['errors']
-                errorMessage.append(val[0]['message'])
+                # errorMessage.append(val[0]['message'])
+                if(val[0]['message'] == 'EMAIL_EXISTS'):
+                    errorMessage.append('Email already exists')
                 context = {'messages':errorMessage}
                 return render(request,'register.html',context)
         else:
